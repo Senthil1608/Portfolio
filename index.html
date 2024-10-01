@@ -35,6 +35,7 @@
                 <a href="#skills" class="py-5 px-3 text-gray-700 hover:text-gray-900">Skills</a>
                 <a href="#experience" class="py-5 px-3 text-gray-700 hover:text-gray-900">Experience</a>
                 <a href="#projects" class="py-5 px-3 text-gray-700 hover:text-gray-900">Projects</a>
+                <a href="#gallery" class="py-5 px-3 text-gray-700 hover:text-gray-900">Gallery</a>
               </div>
             <!-- Mobile button -->
             <div class="md:hidden flex items-center">
@@ -50,6 +51,7 @@
           <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
           <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200">Experience</a>
           <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+          <a href="#gallery" class="block py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
 
         </div>
       </nav>
@@ -98,7 +100,7 @@
     <div id="about"class="container border-2 border-black mx-auto p-4">
         <h1 class="font-junge text-3xl">About</h1>
         <p class="text-xl font-jura text-justify">I am P S Senthil Srinivas, a dedicated engineer with a strong commitment to sustainable development and a passion for continuous learning. My journey in engineering has been marked by a desire to explore and master various fields, enabling me to make meaningful contributions to the industry and society.
-            <br>
+            <br>s
             With experience as a Research and Development Engineer at Genik Technologies, I have engaged deeply in research and academic publications, honing my expertise in the field. Currently, I am enhancing my technical skills with C++ and expanding my proficiency in Linux to stay at the forefront of technological advancements.</p>
     </div>
     <div id="skills"class="container border-2 border-black my-4 mx-auto p-4 ">
@@ -158,7 +160,7 @@
         </p>
         <div class="mt-8 mb-4">
             <a class="bg-black mx-auto text-white p-3 border-2 border-black rounded-lg hover:bg-white hover:text-black hover:rounded-sm" href="Automata_Bin.pdf" download="Automatabin.pdf">Download Paper</a>
-            <a class="text-blue-700 ml-4" href="https://ieeexplore.ieee.org/abstract/document/10448985">Vist IEEE Xplore &rarr;</a>
+            <a class="text-blue-700 ml-4" href="https://ieeexplore.ieee.org/abstract/document/10448985">Visti IEEE Xplore &rarr;</a>
         </div>
         <br><h4>Patent Application Number : <b>202441063644</b> </h4>
         <p>Check Patent Application Status here <a href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus" class="text-blue-900">click here</a></p>
@@ -168,8 +170,51 @@
 
             I developed a prosthetic tool designed to detect voice disorders at an early stage by leveraging the power of Python and MATLAB for in-depth analysis. The tool generates detailed reports, facilitating non-invasive and expedited diagnosis. This innovative approach aims to improve early detection and treatment outcomes for individuals with voice disorders, enhancing both the efficiency and accuracy of diagnostic procedures.
         </p>
-        
     </div>
+    <div id="gallery" class="container border-2 border-black my-4 mx-auto p-6 max-w-4xl relative">
+        <h1 class="font-junge text-3xl text-center mb-6">Gallery</h1>
+        
+        <!-- Image Slider Container -->
+        <div class="relative w-full overflow-hidden">
+            <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Slider Images and Captions -->
+                <div class="w-full flex-shrink-0">
+                    <img src="innovathon.jpg" alt="Image 1" class="w-full h-96 object-cover rounded-lg">
+                    <p class="text-center text-lg text-gray-700 mt-4 font-medium">Innovathon2.0: A day full of creativity and problem-solving! clinched 1st place</p>
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="genikteam.jpg" alt="Image 2" class="w-full h-96 object-cover rounded-lg">
+                    <p class="text-center text-lg text-gray-700 mt-4 font-medium">Genik Team: 1 year of working with the great team to step in software development.</p>
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="tenth.jpg" alt="Image 3" class="w-full h-96 object-contain rounded-lg">
+                    <p class="text-center text-lg text-gray-700 mt-4 font-medium">10th Standard milestone: A milestone achieved with pride,centum score in Foundation of Information technology.</p>
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="speech.jpg" alt="Image 4" class="w-full h-96 object-cover rounded-lg">
+                    <p class="text-center text-lg text-gray-700 mt-4 font-medium">Guest Speaker Session: Inspiring words to fuel ambition.</p>
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="bis.jpg" alt="Image 4" class="w-full h-96 object-cover rounded-lg">
+                    <p class="text-center text-lg text-gray-700 mt-4 font-medium">Successful student representative organizing 3 events in BIS club</p>
+                </div>
+            </div>
+    
+            <!-- Left Arrow -->
+            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-r-lg shadow-lg hover:bg-gray-900">
+                &#10094;
+            </button>
+    
+            <!-- Right Arrow -->
+            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-l-lg shadow-lg hover:bg-gray-900">
+                &#10095;
+            </button>
+        </div>
+    </div>
+    
+    
+    
+    
 </body>
 <script>
     const btn = document.querySelector("button.mobile-menu-button");
@@ -178,5 +223,30 @@
     btn.addEventListener("click", () => {
       menu.classList.toggle("hidden");
     });
+    const slider = document.getElementById('slider');
+let currentIndex = 0;
+
+const images = slider.querySelectorAll('img');
+const totalImages = images.length;
+
+document.getElementById('next').addEventListener('click', () => {
+    if (currentIndex < totalImages - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalImages - 1;
+    }
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+
   </script>
 </html>
